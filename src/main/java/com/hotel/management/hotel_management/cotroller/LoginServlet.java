@@ -27,6 +27,9 @@ public class LoginServlet extends HttpServlet {
         String receptionist_email = "receptionist@gmail.com";
         String receptionist_password = "receptionist";
 
+        String maitre_ouvrage_email = "maitreOuvrage@gmail.com";
+        String maitre_ouvrage_password = "maitreOuvrage";
+
         HttpSession session = request.getSession();
 
         UserDaoImpl userDao = new UserDaoImpl();
@@ -40,6 +43,8 @@ public class LoginServlet extends HttpServlet {
 
         } else if ((email.equals(receptionist_email)) && (password.equals(receptionist_password))) {
             requestDispatcher = request.getRequestDispatcher("views/receptionist/receptionist_home.jsp");
+        } else if (email.equals(maitre_ouvrage_email) && password.equals(maitre_ouvrage_password)) {
+            requestDispatcher = request.getRequestDispatcher("views/maitreOuvrage/maitre_ouvrage_home.jsp");
         } else {
             requestDispatcher = request.getRequestDispatcher("login.jsp");
         }
