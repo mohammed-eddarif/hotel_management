@@ -57,56 +57,6 @@
     </div>
 </nav>
 <div>
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl opacity-95">
-        <h2 class="mb-12 text-2xl text-center">Newest Pools</h2>
-        <div class="grid grid-cols-3 gap-3">
-            <c:forEach items="${pools}" var="pool">
-                <div>
-                    <a href="<%=request.getContextPath()%>/ReceptionistManageRoomsToDetailRoomServlet?id=${pool.pool_id}">
-                        <div class="p-6 bg-white rounded-t-xl">
-                            <h2 class="text-2xl">Pool #${pool.pool_id}</h2>
-                            <p class="text-gray-500">Pool for ${pool.nbr_places} adult</p>
-                            <p class="text-gray-500">Price: ${pool.price} DHs</p>
-                        </div>
-                    </a>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
-
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl opacity-95">
-        <h2 class="mb-12 text-2xl text-center">Newest NightClubs</h2>
-        <div class="grid grid-cols-3 gap-3">
-            <c:forEach items="${nightClubs}" var="club">
-                <div>
-                    <a href="<%=request.getContextPath()%>/ReceptionistManageRoomsToDetailRoomServlet?id=${club.night_club_id}">
-                        <div class="p-6 bg-white rounded-t-xl">
-                            <h2 class="text-2xl">NightClub #${club.night_club_id}</h2>
-                            <p class="text-gray-500">NightClub for ${club.nbr_places} adult</p>
-                            <p class="text-gray-500">Price: ${club.price} DHs</p>
-                        </div>
-                    </a>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
-
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl opacity-95">
-        <h2 class="mb-12 text-2xl text-center">Newest Terasses</h2>
-        <div class="grid grid-cols-3 gap-3">
-            <c:forEach items="${terasses}" var="terasse">
-                <div>
-                    <a href="<%=request.getContextPath()%>/ReceptionistManageRoomsToDetailRoomServlet?id=${terasse.terasse_id}">
-                        <div class="p-6 bg-white rounded-t-xl">
-                            <h2 class="text-2xl">Terasse #${terasse.terasse_id}</h2>
-                            <p class="text-gray-500">Terasse for ${terasse.nbr_places} adult</p>
-                            <p class="text-gray-500">Price: ${terasse.price} DHs</p>
-                        </div>
-                    </a>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
 
     <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl opacity-95">
         <h2 class="mb-12 text-2xl text-center">Newest Tables</h2>

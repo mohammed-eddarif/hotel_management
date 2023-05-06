@@ -27,17 +27,6 @@
     List<Pool> pools = poolDao.findAll();
     request.setAttribute("pools", pools);
 
-    NightClubDaoImpl nightClubDao = new NightClubDaoImpl();
-    List<NightClub> nightClubs = nightClubDao.findAll();
-    request.setAttribute("nightClubs", nightClubs);
-
-    TerasseDaoImpl terasseDao = new TerasseDaoImpl();
-    List<Terasse> terasses = terasseDao.findAll();
-    request.setAttribute("terasses", terasses);
-
-    TableDaoImpl tableDao = new TableDaoImpl();
-    List<Table> tables = tableDao.findAll();
-    request.setAttribute("tables", tables);
 %>
 
 
@@ -74,56 +63,6 @@
         </div>
     </div>
 
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl opacity-95">
-        <h2 class="mb-12 text-2xl text-center">Newest NightClubs</h2>
-        <div class="grid grid-cols-3 gap-3">
-            <c:forEach items="${nightClubs}" var="club">
-                <div>
-                    <a href="<%=request.getContextPath()%>/ReceptionistManageRoomsToDetailRoomServlet?id=${club.night_club_id}">
-                        <div class="p-6 bg-white rounded-t-xl">
-                            <h2 class="text-2xl">NightClub #${club.night_club_id}</h2>
-                            <p class="text-gray-500">NightClub for ${club.nbr_places} adult</p>
-                            <p class="text-gray-500">Price: ${club.price} DHs</p>
-                        </div>
-                    </a>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
-
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl opacity-95">
-        <h2 class="mb-12 text-2xl text-center">Newest Terasses</h2>
-        <div class="grid grid-cols-3 gap-3">
-            <c:forEach items="${terasses}" var="terasse">
-                <div>
-                    <a href="<%=request.getContextPath()%>/ReceptionistManageRoomsToDetailRoomServlet?id=${terasse.terasse_id}">
-                        <div class="p-6 bg-white rounded-t-xl">
-                            <h2 class="text-2xl">Terasse #${terasse.terasse_id}</h2>
-                            <p class="text-gray-500">Terasse for ${terasse.nbr_places} adult</p>
-                            <p class="text-gray-500">Price: ${terasse.price} DHs</p>
-                        </div>
-                    </a>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
-
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl opacity-95">
-        <h2 class="mb-12 text-2xl text-center">Newest Tables</h2>
-        <div class="grid grid-cols-3 gap-3">
-            <c:forEach items="${tables}" var="table">
-                <div>
-                    <a href="<%=request.getContextPath()%>/ReceptionistManageRoomsToDetailRoomServlet?id=${table.table_id}">
-                        <div class="p-6 bg-white rounded-t-xl">
-                            <h2 class="text-2xl">Table #${table.table_id}</h2>
-                            <p class="text-gray-500">Table for ${table.nbr_places} adult</p>
-                            <p class="text-gray-500">Price: ${table.price} DHs</p>
-                        </div>
-                    </a>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
 
 </div>
 
